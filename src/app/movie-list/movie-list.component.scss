@@ -1,75 +1,62 @@
 .eni-movie-card {
+  position: relative;
   background-size: cover;
   background-position: center;
+  overflow: hidden;
   color: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-  margin: 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  padding: 1.5rem;
-  min-height: 600px;
-  max-width: 500px;
-  transition: transform 0.3s ease;
-}
 
-.eni-movie-card:hover {
-  transform: scale(1.02);
-}
-
-.eni-movie-card {
-
-  h2 {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-    font-weight: bold;
+  .eni-dark-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.2));
+    z-index: 1;
+    pointer-events: none;
   }
 
-  p {
-    font-size: 1rem;
+  .eni-movie-card-header {
+    position: relative;
+    z-index: 2;
+    padding: 1rem;
+
+    h1 {
+      font-size: 1.5rem;
+      margin: 0 0 0.2rem;
+      color: #ffffff;
+    }
+
+    h4 {
+      margin: 0;
+      font-weight: normal;
+      color: #dddddd;
+    }
+
+    .minutes {
+      font-size: 0.9rem;
+      color: #cccccc;
+    }
+
+    .type {
+      font-size: 0.8rem;
+      font-style: italic;
+      color: #bbbbbb;
+    }
   }
 
-  .top-infos {
-    margin: 1rem;
-  }
-
-  .star-rating {
-    margin: 0;
-    font-size: 1.2rem;
-    color: darkorange;
-  }
-
-}
-
-/* Responsive Grid (si plusieurs cartes sont affichées) */
-@media (min-width: 500px) {
-  .eni-movie-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-  }
-}
-
-/* Mobile adjustments */
-@media (max-width: 500px) {
-  .eni-movie-card {
-    background-size: cover;
+  .eni-movie-card-desc {
+    position: relative;
+    z-index: 2;
     padding: 1rem;
     font-size: 0.95rem;
-  }
+    color: #f0f0f0;
 
-  .eni-movie-card h2 {
-    font-size: 1.4rem;
-    color: red;
-  }
-
-  .star-rating {
-    font-size: 1rem;
+    .text {
+      margin: 0;
+    }
   }
 }
 
-.star-rating {
-  margin: 10px 0;
-  color: darkorange;
+.eni-movie-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
 }
