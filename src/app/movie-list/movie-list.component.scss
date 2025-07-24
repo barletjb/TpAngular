@@ -1,0 +1,75 @@
+.eni-movie-card {
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  padding: 1.5rem;
+  min-height: 600px;
+  max-width: 500px;
+  transition: transform 0.3s ease;
+}
+
+.eni-movie-card:hover {
+  transform: scale(1.02);
+}
+
+.eni-movie-card {
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  .top-infos {
+    margin: 1rem;
+  }
+
+  .star-rating {
+    margin: 0;
+    font-size: 1.2rem;
+    color: darkorange;
+  }
+
+}
+
+/* Responsive Grid (si plusieurs cartes sont affichées) */
+@media (min-width: 500px) {
+  .eni-movie-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 500px) {
+  .eni-movie-card {
+    background-size: cover;
+    padding: 1rem;
+    font-size: 0.95rem;
+  }
+
+  .eni-movie-card h2 {
+    font-size: 1.4rem;
+    color: red;
+  }
+
+  .star-rating {
+    font-size: 1rem;
+  }
+}
+
+.star-rating {
+  margin: 10px 0;
+  color: darkorange;
+}

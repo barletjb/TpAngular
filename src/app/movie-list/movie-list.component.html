@@ -1,0 +1,28 @@
+@for (movie of movies; track movies) {
+  <div class="uk-card uk-card-secondary uk-card-hover uk-card-body eni-movie-card"
+       [ngStyle]="{ 'background-image': 'url(' + movie.cover + ')' }">
+    <div class="top-infos">
+      <h2>{{ movie.title }}</h2>
+      <p>{{ movie.year }}, {{ movie.author }} </p>
+      <p>{{ movie.duration }} min</p>
+    </div>
+    <div class="star-rating">
+      @for (i of [1, 2, 3, 4, 5]; track i) {
+
+        @if (i <= movie.rating) {
+          <i class="fa-solid fa-star"></i>
+        } @else {
+          <i class="fa-regular fa-star"></i>
+        }
+      }
+    </div>
+
+    <div>
+      <p>Catégorie : {{ movie.genre }}</p>
+      <p>Résumé : {{ movie.synopsis }}</p>
+    </div>
+
+  </div>
+}
+
+
